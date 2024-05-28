@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Reset font size and other properties */
+.html-wrapper * {
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  color: inherit;
+  text-align: inherit;
+}
+
+/* Heading styles */
+.html-wrapper h1 {
+  @apply text-4xl; /* Apply Tailwind's text-4xl class for h1 */
+  @apply font-bold; /* Apply Tailwind's font-bold class for h1 */
+}
+
+.html-wrapper h2 {
+  @apply text-3xl; /* Apply Tailwind's text-3xl class for h2 */
+  @apply font-bold; /* Apply Tailwind's font-bold class for h1 */
+
+}
+
+.html-wrapper h3 {
+  @apply text-2xl; /* Apply Tailwind's text-2xl class for h3 */
+  @apply font-bold; /* Apply Tailwind's font-bold class for h1 */
+
+}
+
+.html-wrapper h4 {
+  @apply text-xl; /* Apply Tailwind's text-xl class for h4 */
+  @apply font-bold; /* Apply Tailwind's font-bold class for h1 */
+
+}
+
+.html-wrapper h5 {
+  @apply text-lg; /* Apply Tailwind's text-lg class for h5 */
+  @apply font-bold; /* Apply Tailwind's font-bold class for h1 */
+
+}
+
+.html-wrapper h6 {
+  @apply text-base; /* Apply Tailwind's text-base class for h6 */
+  @apply font-bold; /* Apply Tailwind's font-bold class for h1 */
+
+}
+
+/* Paragraph styles */
+.html-wrapper p {
+  font-size: 1rem; /* Adjust font size for paragraphs */
+}
+
+.html-wrapper strong{
+  font-weight: bold;
+}
+
+/* List styles */
+.html-wrapper ul,
+.html-wrapper ol {
+  font-size: 1rem; /* Adjust font size for lists */
+}
+
+.html-wrapper ol{
+  list-style-type: decimal ;
+  list-style-position: inside;
+}
+
+.html-wrapper ol li::marker {
+  color: #E46643;
+}
+
+.html-wrapper ul{
+  list-style-type: disc ;
+  list-style-position: inside;
+}
+
+.html-wrapper ul li::marker {
+  color: #E46643;
+}
+
+
+/* Link styles */
+.html-wrapper a {
+  font-size: 1rem; /* Adjust font size for links */
+  text-decoration: underline;
+  color: #E46643; /* Orange color for links */
+}
+
+/* Code block styles */
+.html-wrapper pre {
+  font-size: 1rem; /* Adjust font size for code blocks */
+  background-color: #f3f3f3; /* Gray background color for code blocks */
+  padding: 1rem; /* Adjust padding for code blocks */
+  border-radius: 4px;
+  overflow-x: auto; /* Add horizontal scroll for code blocks */
+
+}
+
+/* Inline code styles */
+.html-wrapper code {
+  font-size: 0.875rem; /* Adjust font size for inline code */
+  background-color: #f3f3f3; /* Gray background color for inline code */
+  padding: 0.2rem 0.4rem; /* Adjust padding for inline code */
+  border-radius: 4px;
+  font-family: 'Fira Code', monospace; /* Use Fira Code font for inline code */
+}
+
+/* Blockquote styles */
+.html-wrapper blockquote {
+  font-size: 1rem; /* Adjust font size for blockquotes */
+  background-color: #f3f3f3; /* Gray background color for blockquotes */
+  padding: 0.2rem 1rem ; /* Adjust padding for blockquotes */
+  border-radius: 4px;
+  border-left: #E46643 solid 4px; /* Orange border for blockquotes */
+}
+
+/* Horizontal rule styles */
+.html-wrapper hr {
+  margin-top: 1.5rem; /* Adjust margin for horizontal rules */
+  margin-bottom: 1.5rem; /* Adjust margin for horizontal rules */
+}
+
+.preview-container{
+  scrollbar-width: thin;
+  scrollbar-color: grey #f3f3f3;
+}
