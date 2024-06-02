@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 
-
 /* Reset font size and other properties */
 .html-wrapper * {
   font-size: inherit;
