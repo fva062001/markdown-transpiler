@@ -16,6 +16,10 @@ const navBarLinks: NavBarLink[] = [
     title: 'Login',
     href: '/api/auth/login',
   },
+  {
+    title: 'Logout',
+    href: '/api/auth/logout',
+  },
 ];
 
 function NavBar() {

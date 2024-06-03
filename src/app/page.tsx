@@ -15,7 +15,7 @@ export default function Page() {
 
   useEffect(() => {
     if (user) {
-      router.push('/editr');
+      router.push('/editor');
     }
   }, [user]);
 
