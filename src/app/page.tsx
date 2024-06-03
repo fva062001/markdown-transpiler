@@ -4,12 +4,20 @@ import { useRouter } from 'next/navigation';
 import Typed from 'typed.js';
 import { useEffect, useRef } from 'react';
 import editorImage from '/public/editor.png';
+import { useUser } from '@auth0/nextjs-auth0/client';
 
 const firaCode = Fira_Code({ subsets: ['latin'] });
 
 export default function Page() {
   const router = useRouter();
   const el = useRef(null);
+  const { user } = useUser();
+
+  useEffect(() => {
+    if (user) {
+      router.push('/editr');
+    }
+  }, [user]);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
