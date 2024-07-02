@@ -27,19 +27,15 @@ function Page() {
   const [showPreview, setShowPreview] = useState(false);
 
   const debounce = useDebouncedCallback((e) => {
-    console.log('debounced');
-    console.log(e.target.value);
     const response = transpileToHTML(e.target.value);
-    console.log(response);
     response.then((res) => {
-      console.log(res);
       setMarkdown(res);
     });
   }, 100);
 
   return (
-    <>
-      <div className="flex flex-row h-screen">
+    <div className="h-screen">
+      <div className="flex flex-row h-full">
         <div
           className={clsx(
             showPreview
@@ -60,6 +56,7 @@ function Page() {
           <textarea
             onChange={debounce}
             ref={textAreaRef}
+            defaultValue={'Start typing your markdown here...'}
             className={` w-full h-full p-3 preview-container ${firaCode.className}  outline-none resize-none`}
           />
         </div>
@@ -88,7 +85,7 @@ function Page() {
           )}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

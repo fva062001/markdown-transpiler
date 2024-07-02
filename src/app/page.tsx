@@ -11,13 +11,13 @@ const firaCode = Fira_Code({ subsets: ['latin'] });
 export default function Page() {
   const router = useRouter();
   const el = useRef(null);
-  const { user } = useUser();
+  // const { user } = useUser();
 
-  useEffect(() => {
-    if (user) {
-      router.push('/editor');
-    }
-  }, [user]);
+  // useEffect(() => {
+  //   if (user) {
+  //     router.push('/editor');
+  //   }
+  // }, [user]);
 
   useEffect(() => {
     const typed = new Typed(el.current, {
@@ -44,14 +44,20 @@ export default function Page() {
           your Markdown files into HTML or preview them instantly.
         </p>
         <div className="space-x-8">
-          <button
+          {/* <button
             onClick={() => {
               router.push('/api/auth/login');
             }}
             className="bg-black text-white px-6 py-2 hover:text-black hover:bg-white border border-2-black hover:border-2-black/30">
             Login
+          </button> */}
+          <button
+            onClick={() => {
+              router.push('/editor');
+            }}
+            className="bg-black text-white px-6 py-2 hover:text-black hover:bg-white border border-2-black hover:border-2-black/30">
+            Try it Out
           </button>
-          <button>Try it Out</button>
         </div>
       </div>
       <div className="lg:order-2 order-1 lg:w-6/12  flex justify-center items-center mx-6 lg:mx-12 ">

@@ -1,6 +1,10 @@
+'use client';
 import React from 'react';
 import Link from 'next/link';
 import markDownLogo from '/public/markdownLogo.svg.png';
+import { useUser } from '@auth0/nextjs-auth0/client';
+import clsx from 'clsx';
+import { usePathname } from 'next/navigation';
 
 type NavBarLink = {
   title: string;
@@ -12,20 +16,20 @@ const navBarLinks: NavBarLink[] = [
     title: 'About',
     href: '/about',
   },
-  {
-    title: 'Login',
-    href: '/api/auth/login',
-  },
-  {
-    title: 'Logout',
-    href: '/api/auth/logout',
-  },
 ];
 
 function NavBar() {
+  const { user } = useUser();
+  const pathname = usePathname();
+  console.log(pathname);
+
   return (
     <nav
-      className="absolute top-0 flex justify-between items-center h-16 w-screen bg-white text-black  shadow-sm font-mono px-4 lg:px-12"
+      className={clsx(
+        pathname !== '/'
+          ? ' top-0 flex justify-between items-center h-16 w-screen bg-white text-black  shadow-sm font-mono px-4 lg:px-12'
+          : 'absolute top-0 flex justify-between items-center h-16 w-screen bg-white text-black  shadow-sm font-mono px-4 lg:px-12'
+      )}
       role="navigation">
       <Link href="/">
         <img
@@ -45,6 +49,19 @@ function NavBar() {
             </Link>
           );
         })}
+        {/* {user ? (
+          <Link
+            className=" hover:font-bold hover:text-black hover:underline cursor-pointer p-4"
+            href={'/api/auth/logout'}>
+            <p>Logout</p>
+          </Link>
+        ) : (
+          <Link
+            className=" hover:font-bold hover:text-black hover:underline cursor-pointer p-4"
+            href={'/api/auth/login'}>
+            <p>Login</p>
+          </Link>
+        )} */}
       </div>
     </nav>
   );
